@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'roboto';
+        src: URL('fonts/Roboto-Regular.ttf') format('truetype');
+      }
+      #editToken:hover {
+        text-decoration: : underline;
+      }
+      #enterTokenDiv, #pauseDiv, #unpauseDiv, #editToken, #clearBtn,
+      #daysLeft, #cats {
+        display: none;
+      }
+      button {
+        background-color: #2f465d;
+        border: none;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 2px;
+        font-family: roboto;
+      }
+      h3 {
+        line-height: 1.3;
+      }
+      .underline:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body style="margin-bottom: 0; font-family: roboto; color: #2f465d">
+    <div id="container" style="min-width: 180px; margin: 20px 10px 5px 10px">
+      <div style="margin-bottom: 10px; margin-top: 15px">
+        <img src="images/vipfy_logo_w_text.png" height="20px"><br> 
+        <label style="font-weight: bold; font-size: 20px; ">Click Tracking Study</label>
+      </div>
+
+      <h3 id="status" style="margin-bottom: 15px"></h3>
+
+      <h3 id="daysLeft"></h3>
+
+      <div id="cats" style="min-width: 300px">
+        <h3>You received your Amazon voucher via email. <br>
+            Thanks for further supporting security research! <br>
+            Here is your daily cat gif.</h3>
+            <img id="catpic" 
+                style="margin-top: 5px; max-width: 500px; max-height: 300px; min-width: 300px">
+      </div>
+
+
+      <div id="pauseDiv">
+        <button id="pauseBtn" style="margin-right: 5px">Pause Tracking</button>
+        <label style="margin-right: 5px; margin-bottom: 5px; margin-top: 10px"> for </label>
+        <input type="number" id="durationInput" style="width: 45px;
+        text-align: right;" value="30">
+        min
+      </div>
+
+      <div id="unpauseDiv">
+        <button id="unpauseBtn">Resume</button>
+      </div>
+
+      <a id="editToken" class="underline" style="color: #168091; font-weight: bold; margin-top: 20px;">Edit token</a>
+
+      <div style="width: 225px; margin-top: 30px; margin-bottom: 0px" id="enterTokenDiv">
+        <h3>Please enter the token you received:</h3>
+        <input type="text" id="tokenInput"><button id="saveBtn">Save</button>
+      </div>
+
+      <br><button id="clearBtn">Clear</button>
+    
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+  {
+    "name": "Vipfy Click Tracker",
+    "description" : "Part of the Vipfy Click Tracking Study. It gathers data about the user's mouse usage, without gathering sensitive data.",
+    "version": "1.1.0",
+    "permissions": [
+      "storage"
+    ],
+    "background": {
+      "scripts": ["LZMA/lzma_worker.js","background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "options.html",
+      "default_icon": {
+        "16": "images/vipfy_logo16.png",
+        "32": "images/vipfy_logo32.png",
+        "48": "images/vipfy_logo48.png",
+        "128": "images/vipfy_logo128.png"
+      }
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "images/vipfy_logo16.png",
+        "32": "images/vipfy_logo32.png",
+        "48": "images/vipfy_logo48.png",
+        "128": "images/vipfy_logo128.png"
+    },
+    "content_scripts": [
+	   {
+	     "matches": ["http://*/*", "https://*/*"],
+       "run_at": "document_start",
+	     "js": ["tracking_on_page.js"]
+	   }
+	  ],
+    "web_accessible_resources": ["handleListeners.js"],
+    "manifest_version": 2
+  }
